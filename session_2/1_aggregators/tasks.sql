@@ -58,18 +58,42 @@
 -- 11. Find the average population per continent, considering only
 --     countries with a population greater than 10 million.
 
+-- SELECT Continent AS Con, AVG(Population) AS AvPop FROM countries
+--   WHERE Population > 10000000
+--   GROUP BY Con;
+
 -- 12. Find the average GDP per capita per continent, considering only
 --     countries where literacy is above 80%.
 
+-- SELECT Continent as Con, AVG(GDPPerCapita) as AvGDP FROM countries
+--   WHERE LiteracyPercent > 80
+--   GROUP BY Con;
+
 -- 13. For each continent, find the maximum birthrate of countries
 --     in which infant mortality is below 30 per 1000 births.
+
+-- SELECT Continent AS Con, Country, MAX(Birthrate) FROM countries
+--   WHERE InfantMortalityPer1000 < 30
+--   GROUP BY Con;
 
 -- 14. Find continents where the average GDP per capita is greater
 --     than 10,000, considering only countries with a literacy rate
 --     above 80%, and order the results from highest to lowest average
 --     GDP per capita.
 
+-- SELECT Continent AS Con, AVG(GDPPerCapita) as AvGDP
+--   FROM countries WHERE LiteracyPercent > 80
+--   GROUP BY Con
+--   HAVING AvGDP > 10000
+--   ORDER BY AvGDP DESC;
+
 -- 15. Find continents that have a total population greater than 500 million,
 --     but only include countries where the birthrate is below 20, order the
 --     results by total population (largest first), and limit the output
 --     to 3 results.
+
+SELECT Continent AS Con, SUM(Population) AS TotPop
+  FROM countries WHERE Birthrate < 20
+  GROUP By Con
+  HAVING TotPop > 500000000
+  ORDER BY TotPop DESC LIMIT 3;
