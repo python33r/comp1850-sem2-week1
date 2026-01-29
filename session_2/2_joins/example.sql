@@ -7,5 +7,5 @@
 -- 2. Load this script: .read example.sql
 -- 3. Exit SQLite: .exit
 
--- Use this file to test things out, follow allow with classwork, etc.
+-- Use this file to test things out, follow along with classwork, etc.
 

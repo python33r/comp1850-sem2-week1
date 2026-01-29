@@ -1,17 +1,8 @@
 -- Task 2
 
--- Enable readable output format
 .mode columns
 .width 30
 .headers on
-
--- Instructions for students:
--- 1. Open SQLite in terminal: sqlite3 countries.db
--- 2. Load this script: .read task2.sql
--- 3. Exit SQLite: .exit
-
-
--- write your sql code here
 
 -- 1. The 10 most populated countries.
 
